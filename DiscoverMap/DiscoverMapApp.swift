@@ -9,9 +9,13 @@ import SwiftUI
 
 @main
 struct DiscoverMapApp: App {
+    
+    @StateObject private var vm = LocationViewModel()
+
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LocationView()
+                .environmentObject(vm)
         }
     }
 }
